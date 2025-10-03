@@ -26,6 +26,8 @@ echo "📁 Working directory: $(pwd)"
 echo "📚 Installing dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install mistral_inference
+pip install "mistral-common[sentencepiece]"
 
 # Set environment variables
 export HOST="0.0.0.0"
