@@ -48,4 +48,4 @@ export REQUEST_TIMEOUT="300"
 echo "🌐 Starting server on ${HOST}:${PORT}..."
 echo "📊 Access the API at: http://localhost:8000"
 echo "📚 API docs at: http://localhost:8000/docs"
-exec python -m app.main
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
