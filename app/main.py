@@ -10,6 +10,7 @@ from app.api.endpoints import chat, models
 from app.config.settings import settings
 from app.utils.logging import logger
 from app.models.schemas import HealthResponse, ServerInfo
+from app.api.endpoints import streaming  # NEW
 
 # Create FastAPI app
 app = FastAPI(
@@ -65,6 +66,13 @@ app.include_router(
     models.router,
     prefix="/v1/models",
     tags=["models"]
+)
+
+# Include streaming router
+app.include_router(
+    streaming.router,
+    prefix="/api/v1",
+    tags=["streaming"]
 )
 
 # Health and info endpoints
